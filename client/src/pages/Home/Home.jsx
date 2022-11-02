@@ -8,6 +8,7 @@ import loadingImg from "../../Images/loadingImg.webp"
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -34,6 +35,26 @@ function Home() {
 
     console.log(articles)
 
+
+    //SEARCH
+    const [ search, setSearch ] = useState()
+
+    const searchNews = async () => {
+        try {
+            const url = '/search'
+            const header = {
+                "search": search
+            }
+            
+            const res = await api.post(url, header)
+            setArticles(res.data.articles);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+
+
     return (
         <>
             <NavBar />
@@ -50,6 +71,8 @@ function Home() {
                                             <Card.Body>
                                                 <Card.Title>{art.title}</Card.Title>
                                                 <Card.Text>{art.description}</Card.Text>
+                                                <Card.Text><strong>Author:</strong> {art.author}</Card.Text>
+
                                             </Card.Body>
                                         </Card>
                                     </Col>
@@ -62,11 +85,11 @@ function Home() {
 
                 </section>
                 <section className='section-right'>
-                    <div>
-                        <h3>País</h3>
-                    </div>
-
-                    <div>
+                        <h6>Filter</h6>
+                        <input type="text" onChange={e => setSearch(e.target.value)}/>
+                        <Button className='section-right_button' onClick={searchNews}>Buscar</Button>
+                    <div >
+                        <h6>Countri</h6>
                         <ul>
                             <li><button className='button' onClick={()=> setDefaltUrl('/brazil')}>Brasil</button></li>
                             <li><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>

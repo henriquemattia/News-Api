@@ -15,7 +15,6 @@ function Router() {
 
           <Route path='/' index element={<Home />} />
 
-
         </Routes>
       </BrowserRouter>
     </>

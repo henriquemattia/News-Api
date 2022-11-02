@@ -7,15 +7,34 @@ const key = process.env.API_SECRET
 
 class AuthController {
 
+
+
     static home = async (req, res) =>{
         try {
             const result = await axios.get(`https://newsapi.org/v2/top-headlines?country=br&apiKey=${key}`)
             return res.status(200).send(result.data)
 
         } catch (error) {
-            
+            res.status(404)
+            console.log(error)  
         }
     }
+
+    static search = async (req, res) =>{
+
+        let search = req.body.search
+        
+        try {
+            const result = await axios.get(`https://newsapi.org/v2/everything?q=${search}&apiKey=${key}`)
+            return res.status(200).send(result.data)
+
+        } catch (error) {
+            res.status(404)
+            console.log(error)
+        }
+    }
+
+    
 
     static brazil = async (req, res) => {
         try {

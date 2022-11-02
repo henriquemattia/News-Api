@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -7,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className='fixed-top' bg="light" expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">News World</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -17,16 +16,9 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+           
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder='Ex: "Brazil"'
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>
