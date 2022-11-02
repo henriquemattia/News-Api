@@ -2,25 +2,24 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/navBar/NavBar';
 
 import { api } from '../../services/Api';
-import "./home.css"
 import loadingImg from "../../Images/loadingImg.webp"
 
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import "./home.css"
 
 
 
 function Home() {
 
     const [articles, setArticles] = useState([])
-    const [defaltUrl, setDefaltUrl] = useState('/home')
+    const [defaltUrl, setDefaltUrl] = useState('/brasil')
 
     const getProduts = async () => {
         try {
             const url = defaltUrl
-            
             const res = await api.get(url)
             setArticles(res.data.articles);
         } catch (err) {
@@ -33,11 +32,8 @@ function Home() {
         getProduts()
     }, [defaltUrl])
 
-    console.log(articles)
-
-
     //SEARCH
-    const [ search, setSearch ] = useState()
+    const [search, setSearch] = useState()
 
     const searchNews = async () => {
         try {
@@ -45,15 +41,13 @@ function Home() {
             const header = {
                 "search": search
             }
-            
+
             const res = await api.post(url, header)
             setArticles(res.data.articles);
         } catch (err) {
             console.log(err);
         }
     }
-
-
 
     return (
         <>
@@ -71,7 +65,7 @@ function Home() {
                                             <Card.Body>
                                                 <Card.Title>{art.title}</Card.Title>
                                                 <Card.Text>{art.description}</Card.Text>
-                                                <Card.Text><strong>Author:</strong> {art.author}</Card.Text>
+                                                <Card.Text><strong>Author: </strong> {art.author || " unknown"}</Card.Text>
 
                                             </Card.Body>
                                         </Card>
@@ -85,21 +79,22 @@ function Home() {
 
                 </section>
                 <section className='section-right'>
-                        <h6>FILTER</h6>
-                        <input type="text" onChange={e => setSearch(e.target.value)}/>
-                        <Button className='section-right_button' onClick={searchNews}>Buscar</Button>
+                    <h6>FILTER</h6>
+                    <input type="text" onChange={e => setSearch(e.target.value)} />
+                    <Button className='section-right_button' onClick={searchNews}>Buscar</Button>
 
-                        <span className='divider'></span>
+                    <span className='divider'></span>
 
                     <div className='coutri_div'>
                         <h6>COUNTRI</h6>
                         <ul>
-                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/brazil')}>Brasil</button></li>
-                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
-                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/london')}>London</button></li>
-                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
-                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
-                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/brasil')}>Brasil</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/argentina')}>Argentina</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/venezuela')}>Venezuela</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/usa')}>U.S.A</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/london')}>London</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/ucrania')}>Ucrânia</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={() => setDefaltUrl('/russia')}>Russia</button></li>
                         </ul>
                     </div>
 
