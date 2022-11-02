@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from '../../components/navBar/NavBar';
-
-import { api } from '../../services/Api';
-import loadingImg from "../../Images/loadingImg.webp"
-
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+
+import NavBar from '../../components/navBar/NavBar';
+import { api } from '../../services/Api';
+import loadingImg from "../../Images/loadingImg.webp"
+
 import "./home.css"
 
 
@@ -27,7 +27,6 @@ function Home() {
         }
     }
 
-
     useEffect(() => {
         getProduts()
     }, [defaltUrl])
@@ -41,7 +40,7 @@ function Home() {
             const header = {
                 "search": search
             }
-
+            
             const res = await api.post(url, header)
             setArticles(res.data.articles);
         } catch (err) {

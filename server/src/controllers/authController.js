@@ -4,7 +4,6 @@ import axios from "axios"
 dotenv.config()
 const key = process.env.API_SECRET
 
-
 class AuthController {
 
     static search = async (req, res) => {

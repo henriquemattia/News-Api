@@ -28,8 +28,6 @@
     padding-top: 1rem;
 }
 
-
-
 ul{
     list-style: none;
     padding: 0!important;
@@ -47,18 +45,16 @@ input{
     margin-bottom: 2rem;
 
 }
+
 .section-right_button:hover{
     background-color: rgb(55, 144, 71)!important;
 
 }
 
-
-
 .button{
     background-color: transparent;
     border: none;
 }
-
 
 .divider{
     width: 100%;

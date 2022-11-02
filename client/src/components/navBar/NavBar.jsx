@@ -16,9 +16,7 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-           
           </Nav>
-         
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -3,7 +3,6 @@ import express from "express"
 
 const router = express.Router();
 
-
 router.post("/search", AuthController.search)
 
 router.get("/brasil", AuthController.brasil)
