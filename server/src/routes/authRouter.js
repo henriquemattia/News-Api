@@ -9,5 +9,6 @@ router.post("/search", AuthController.search)
 
 router.get("/brazil", AuthController.brazil)
 router.get("/usa", AuthController.usa)
+router.get("/london", AuthController.london)
 
 export default router;

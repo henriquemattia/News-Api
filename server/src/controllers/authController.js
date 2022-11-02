@@ -57,6 +57,17 @@ class AuthController {
             console.log(error)
         }
     }
+
+    static london = async (req, res) => {
+        try {
+            const result = await axios.get(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${key}`)
+            return res.status(200).send(result.data)
+
+        } catch (error) {
+            res.status(404)
+            console.log(error)
+        }
+    }
 }
 
 export default AuthController;

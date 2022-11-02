@@ -96,6 +96,10 @@ function Home() {
                         <ul>
                             <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/brazil')}>Brasil</button></li>
                             <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/london')}>London</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
                         </ul>
                     </div>
 
