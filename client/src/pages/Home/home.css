@@ -1,0 +1,25 @@
+.all{
+    display: flex;
+    width: 100%;
+}
+
+.section-left{
+    min-height: 80vh;
+    margin: 4vh 0vw 0vh 4vw ;
+
+    width: 70vw;
+    /* border: solid red 2px; */
+}
+
+.section-right{
+    height: 80vh;
+    margin: 4vh 4vw 0vh 2vw ;
+
+    width: 20vw;
+    border: solid red 2px;
+}
+
+.button{
+    background-color: transparent;
+    border: none;
+}
