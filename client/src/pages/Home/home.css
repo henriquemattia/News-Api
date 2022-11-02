@@ -52,3 +52,15 @@ input{
     background-color: transparent;
     border: none;
 }
+
+
+.divider{
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.569);
+    margin-bottom: 1rem;
+}
+
+.coutris_li{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.569);
+    margin: 0 0 0.4rem 0;
+}

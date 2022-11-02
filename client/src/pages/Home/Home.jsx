@@ -85,14 +85,17 @@ function Home() {
 
                 </section>
                 <section className='section-right'>
-                        <h6>Filter</h6>
+                        <h6>FILTER</h6>
                         <input type="text" onChange={e => setSearch(e.target.value)}/>
                         <Button className='section-right_button' onClick={searchNews}>Buscar</Button>
-                    <div >
-                        <h6>Countri</h6>
+
+                        <span className='divider'></span>
+
+                    <div className='coutri_div'>
+                        <h6>COUNTRI</h6>
                         <ul>
-                            <li><button className='button' onClick={()=> setDefaltUrl('/brazil')}>Brasil</button></li>
-                            <li><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/brazil')}>Brasil</button></li>
+                            <li className='coutris_li' ><button className='button' onClick={()=> setDefaltUrl('/usa')}>U.S.A</button></li>
                         </ul>
                     </div>
 
