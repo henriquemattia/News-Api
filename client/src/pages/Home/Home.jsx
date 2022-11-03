@@ -80,7 +80,7 @@ function Home() {
                 <section className='section-right'>
                     <h6>FILTER</h6>
                     <input type="text" onChange={e => setSearch(e.target.value)} />
-                    <Button className='section-right_button' onClick={searchNews}>Buscar</Button>
+                    <Button className='section-right_button' onClick={searchNews}>Search</Button>
 
                     <span className='divider'></span>
 
